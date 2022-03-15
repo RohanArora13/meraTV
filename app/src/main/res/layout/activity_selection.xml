@@ -3,42 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".selection.SelectionFragment">
 
-    <RelativeLayout
-        android:id="@+id/selection_header_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:padding="@dimen/_5sdp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/selection_header_view"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="Selections"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textStyle="bold" />
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/_5sdp">
 
-        <Spinner
-            android:id="@+id/selection_filter_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:verticalScrollbarPosition="left"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/selection_clear_filter"
-            tools:entries="@array/month_names" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Selections"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/selection_clear_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/ic_clear_black_24dp" />
-    </RelativeLayout>
+            <Spinner
+                android:id="@+id/selection_filter_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/selection_clear_filter"
+                android:verticalScrollbarPosition="left"
+                tools:entries="@array/month_names" />
+
+            <ImageButton
+                android:id="@+id/selection_clear_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_clear_black_24dp" />
+        </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/selection_header_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/selection_recycler_view"
@@ -47,5 +58,7 @@
         android:layout_below="@id/selection_header_view"
         tools:itemCount="5"
         tools:listitem="@layout/custom_item_selection" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

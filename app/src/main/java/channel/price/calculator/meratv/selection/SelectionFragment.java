@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -33,10 +34,13 @@ public class SelectionFragment extends Fragment {
     private RecyclerView recyclerView;
     private Spinner filterSpinner;
     private ImageButton clearFilterBtn;
+    private SwipeRefreshLayout refreshLayout;
+    private SwipeRefreshLayout.OnRefreshListener refreshListener;
 
     private SelectionAdapter adapter;
     private SelectionDbHelper dbHelper;
     private ArrayList<Selection> data;
+
 
 
 
@@ -50,11 +54,20 @@ public class SelectionFragment extends Fragment {
         recyclerView = view.findViewById(R.id.selection_recycler_view);
         filterSpinner = view.findViewById(R.id.selection_filter_spinner);
         clearFilterBtn = view.findViewById(R.id.selection_clear_filter);
+        refreshLayout = view.findViewById(R.id.swipeRefreshLayout);
 
         dbHelper = new SelectionDbHelper(getContext());
         data = new ArrayList<>();
 
         fetchFromDatabase();
+
+        refreshListener = () -> {
+            refreshLayout.setRefreshing(true);
+            fetchFromDatabase();
+            refreshLayout.setRefreshing(false);
+        };
+
+        refreshLayout.setOnRefreshListener(refreshListener);
 
         adapter = new SelectionAdapter(getContext(), data);
 
@@ -156,6 +169,7 @@ public class SelectionFragment extends Fragment {
         int monthlyReportColumnIndex = cursor.getColumnIndex(SelectionEntry.COLUMN_MONTHLY_REPORT);
 
         if (cursor.moveToFirst()) {
+            data.clear();
             do {
                 // getting values from those columns
                 int selectionUid = cursor.getInt(selectionUidColumnIndex);

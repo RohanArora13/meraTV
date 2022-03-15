@@ -70,5 +70,8 @@ dependencies {
     // file size too BIG
     implementation 'net.zetetic:android-database-sqlcipher:4.0.1@aar'
 
+    // swipe to refresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
 
 }
