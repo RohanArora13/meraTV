@@ -1,0 +1,16 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+<!--
+  Copyright (C) Rohan Arora - All Rights Reserved
+  Unauthorized copying of this file, via any medium is strictly prohibited
+  Proprietary and confidential
+  Created by Rohan Arora <rohanarora1313@gmail.com> on 12/2/19 3:56 PM
+
+  Last modified 12/2/19 3:56 PM
+
+  -->
+    <gradient
+        android:angle="0"
+        android:startColor="#444444"
+        android:centerColor="@android:color/transparent"
+        android:centerX="0.01" />
+</shape>

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">MeraTV</string>
+
+    <!--Mso_selection layout -->
+    <string name="choice_text_1">Select your MSO</string>
+    <string name="cable">Cable</string>
+    <string name="cable_disp">Setup box connection</string>
+    <string name="dth_title">DTH</string>
+    <string name="dth_disp">Dish TV, Direct connection</string>
+    <string name="both">Both</string>
+    <string name="both_disc">If you have both connections</string>
+    <string name="total_amount">Total Amount</string>
+
+    <!--main activity buttons-->
+    <string name="view_selection">View Selection</string>
+    <string name="Share">Share PDF</string>
+
+    <!--Bottom sheet-->
+    <string name="calculation">Calculation</string>
+    <string name="include_gst">Include GST (18%)</string>
+    <string name="base_price">Base Price :</string>
+    <string name="slot_ext">Slot Extensions :</string>
+    <string name="total_channel_price">Total Channel Price :</string>
+    <string name="maintenance_price">Maintenance Price :</string>
+    <string name="gst_charges">GST Charges :</string>
+
+    <string name="channel_heading">Channels</string>
+    <string name="channels_selected">Channels selected :</string>
+    <string name="paid_channel">Paid Channels :</string>
+    <string name="free_channel">Free Channels :</string>
+    <string name="Total_channel_slot">Total Channel Slot :</string>
+    <string name="available_channel_slot">Available Slot :</string>
+    <string name="packages_selected">Packages Selected :</string>
+
+    <!--file provider unique authority-->
+    <string name="file_provider_authority" translatable="false">${applicationId}.fileprovider</string>
+    <string name="folder_name">MeraTV</string>
+
+    <!--for sorting in recycler view-->
+    <string-array name="sort_types">
+        <item>A-Z</item>
+        <item>Price-Low to High</item>
+        <item>Price-High to Low</item>
+    </string-array>
+    <string name="title_activity_view_selection">view_selection</string>
+    <string name="action_settings">Settings</string>
+
+    <!--month names for selection layout-->
+    <string-array name="month_names">
+        <item>Select Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+</resources>

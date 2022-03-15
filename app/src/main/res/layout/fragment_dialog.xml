@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) Rohan Arora - All Rights Reserved
+  Unauthorized copying of this file, via any medium is strictly prohibited
+  Proprietary and confidential
+  Created by Rohan Arora <rohanarora1313@gmail.com> on 29/1/19 11:51 AM
+
+  Last modified 29/1/19 11:05 AM
+
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dialog__main_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/dialog_close_btn"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/dialog_close_btn"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:textSize="@dimen/_15sdp"
+        android:background="@drawable/roundbtn"
+        android:text="Close" />
+
+</RelativeLayout>

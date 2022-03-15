@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) Rohan Arora - All Rights Reserved
+  Unauthorized copying of this file, via any medium is strictly prohibited
+  Proprietary and confidential
+  Created by Rohan Arora <rohanarora1313@gmail.com> on 12/1/19 11:09 AM
+
+  Last modified 12/1/19 11:09 AM
+
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="@android:integer/config_mediumAnimTime"
+    android:exitFadeDuration="@android:integer/config_mediumAnimTime"
+    >
+
+    <item android:drawable="@drawable/rountbtn_big_pressed" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/rountbtn_big"></item>
+
+</selector>

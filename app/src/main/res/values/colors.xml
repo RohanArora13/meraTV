@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009b6f</color>
+    <color name="colorPrimaryDark">#00533B</color>
+    <!--<color name="colorAccent">#1BB694</color>-->
+
+    <color name="colorAccent">#009b6f</color><!--< theme >-->
+    <color name="green_teal_600">#009b6f</color> <!--< selector >-->
+    <color name="green_teal_500">#009b6f</color> <!--<  >-->
+    <color name="green_teal_700">#ACACAC</color>
+    <color name="green_teal_300">#63FFD2</color> <!--< selector >-->
+
+    <color name="pink_white">#f1f5f2</color>
+
+    <!--<color name="green_teal_600">#4DB6AC</color>-->
+    <!--<color name="green_teal_500">#1ED3AB</color>-->
+    <!--<color name="green_teal_700">#16997C</color>-->
+
+    <color name="trans">#00ffffff</color>
+    <color name="text_color">#696969</color>
+
+    <!-- Recycler view colours-->
+    <color name="bottom_line">#C7C7C7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_dim">#E7E7E7</color>
+
+
+</resources>

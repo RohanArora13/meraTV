@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/design_bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_250sdp"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    android:background="@color/green_teal_600"
+    >
+
+    <RelativeLayout
+        android:id="@+id/top_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:text="@string/total_amount"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_17ssp" />
+
+        <TextView
+            android:id="@+id/Rs_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/bottomsh_total_price"
+            android:layout_alignBaseline="@+id/bottomsh_total_price"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_3sdp"
+            android:text="Rs."
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:id="@+id/bottomsh_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@+id/total_amount"
+            android:gravity="center"
+            android:text="130.00"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_19ssp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <!--calculation heading-->
+    <LinearLayout
+        android:id="@+id/calc_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_price"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/line_1"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/calculation_text"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="calculation"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/line_2"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <!--calculation data -->
+    <LinearLayout
+        android:id="@+id/calc_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calc_head"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <!--base price & slot ext layout -->
+        <RelativeLayout
+            android:id="@+id/calc_right_part"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+
+            <!-- static text -->
+            <TextView
+                android:id="@+id/base_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/base_price_cost"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/base_price"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/slot_ext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/base_price"
+                android:layout_toLeftOf="@+id/slot_ext_cost"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/slot_ext"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <!--price variable -->
+            <TextView
+                android:id="@+id/base_price_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/slot_ext_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/base_price"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+        </RelativeLayout>
+
+        <!--total channel price & maintances layout -->
+        <RelativeLayout
+            android:id="@+id/calc_left_part"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.55"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+
+            <!-- static text -->
+            <TextView
+                android:id="@+id/total_channel_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/total_channel_price_cost"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/total_channel_price"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/maintenance_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_channel_price"
+                android:layout_toLeftOf="@+id/maintenance_price_cost"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/maintenance_price"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/GST_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintenance_price"
+                android:layout_toLeftOf="@+id/GST_Price_cost"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/gst_charges"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <!--price variable -->
+
+
+            <TextView
+                android:id="@+id/total_channel_price_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/maintenance_price_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_channel_price"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/GST_Price_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintenance_price_cost"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--channel heading-->
+    <LinearLayout
+        android:id="@+id/channel_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calc_data"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp" android:weightSum="1"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/channel_line_1"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/channel_text"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/channel_heading"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/channel_line_2"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <!--calculation data -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chn_data"
+        android:layout_below="@+id/channel_head"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        >
+
+        <!--base price & slot ext layout -->
+        <RelativeLayout
+            android:id="@+id/chn_right_part"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_7sdp"
+            >
+
+
+            <!-- static text -->
+            <TextView
+                android:id="@+id/chn_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_selected_no"
+                android:layout_alignBaseline="@+id/chn_selected_no"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/channels_selected"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/chn_paid_channel"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/chn_selected_no"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_paid_channel_no"
+                android:layout_alignBaseline="@+id/chn_paid_channel_no"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textAlignment="textEnd"
+                android:text="@string/paid_channel"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/chn_free_channel"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/chn_paid_channel"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_free_channel_no"
+                android:layout_alignBaseline="@+id/chn_free_channel_no"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textAlignment="textEnd"
+                android:text="@string/free_channel"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/chn_hd_channel"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/chn_free_channel"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_hd_channel_no"
+                android:layout_alignBaseline="@+id/chn_hd_channel_no"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textAlignment="textEnd"
+                android:text="HD Channels :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+
+            <!--price variable -->
+            <TextView
+                android:id="@+id/chn_selected_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/chn_paid_channel_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/chn_selected_no"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/chn_free_channel_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/chn_paid_channel_no"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/chn_hd_channel_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/chn_free_channel_no"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+        </RelativeLayout>
+
+        <!--total channel price & maintances layout -->
+        <RelativeLayout
+            android:id="@+id/chn_left_part"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_7sdp"
+            >
+
+
+            <!-- static text -->
+            <TextView
+                android:id="@+id/chn_total_channel_slot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_total_channel_slot_no"
+                android:layout_alignBaseline="@+id/chn_total_channel_slot_no"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/Total_channel_slot"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/chn_available_channels"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/chn_total_channel_slot"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_available_channels_no"
+                android:layout_alignBaseline="@+id/chn_available_channels_no"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textAlignment="textEnd"
+                android:text="@string/available_channel_slot"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/chn_packages"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/chn_available_channels"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/chn_packages_no"
+                android:layout_alignBaseline="@+id/chn_packages_no"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:textAlignment="textEnd"
+                android:text="@string/packages_selected"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <!--price variable -->
+
+
+            <TextView
+                android:id="@+id/chn_total_channel_slot_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/chn_available_channels_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/chn_total_channel_slot_no"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+            <TextView
+                android:id="@+id/chn_packages_no"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/chn_available_channels_no"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:text="20"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13ssp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_below="@+id/chn_data"
+        />
+
+
+
+</RelativeLayout>

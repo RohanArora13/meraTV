@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:contentPadding="@dimen/_2sdp"
+    app:strokeColor="@color/green_teal_600"
+    app:strokeWidth="@dimen/_2sdp"
+    android:background="@drawable/roundbtn"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/selection_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_toStartOf="@id/selection_more_details">
+
+            <LinearLayout
+
+                android:id="@+id/selection_header_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_3sdp">
+
+                <TextView
+                    android:id="@+id/selection_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:text="Selection Name"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/selection_subscribed_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Active"
+                    android:textSize="@dimen/_11sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_teal_600"
+                    android:visibility="invisible"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/selection_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Rs.330"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="#000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/selection_separation_line"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@id/selection_header_layout"
+                android:background="@color/bottom_line" />
+
+            <RelativeLayout
+                android:id="@+id/selection_action_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_3sdp"
+                android:layout_below="@id/selection_separation_line"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/selection_edit_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:textSize="@dimen/_11ssp"                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_toRightOf="@+id/selection_restore_btn"
+                    android:background="@drawable/roundbtn"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="Edit"
+                    android:textColor="@color/green_teal_600" />
+
+                <Button
+                    android:id="@+id/selection_restore_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:textSize="@dimen/_11ssp"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/roundbtn"
+                    android:layout_centerInParent="true"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:text="Restore"
+                    android:textColor="@color/green_teal_600" />
+
+                <TextView
+                    android:id="@+id/selection_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:text="21 Jan 2019"
+                    android:textSize="@dimen/_10sdp" />
+                <TextView
+                    android:id="@+id/selection_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:layout_toLeftOf="@id/selection_date_tv"
+                    android:layout_centerVertical="true"
+                    android:text="1:00 am" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/selection_more_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/selection_layout"
+            android:layout_alignBottom="@id/selection_layout"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:src="@drawable/ic__right_black_24dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

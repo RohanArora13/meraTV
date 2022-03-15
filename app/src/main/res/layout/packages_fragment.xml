@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) Rohan Arora - All Rights Reserved
+  Unauthorized copying of this file, via any medium is strictly prohibited
+  Proprietary and confidential
+  Created by Rohan Arora <rohanarora1313@gmail.com> on 1/2/19 11:17 AM
+
+  Last modified 1/2/19 11:17 AM
+
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    tools:context=".packages.package_fragment">-->
+
+    <RelativeLayout
+        android:id="@+id/package_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_teal_600"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="Select Package"
+            android:textColor="@color/white"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/package_filter_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:verticalScrollbarPosition="left"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/round_rectangle"
+            android:layout_toRightOf="@id/header_text"
+            android:layout_toLeftOf="@id/package_clear_filter"
+            android:layout_centerVertical="true"
+            tools:entries="@array/month_names" />
+
+        <ImageButton
+            android:id="@+id/package_clear_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_clear_black_24dp" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/package_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/package_header_view"
+        tools:itemCount="5"
+        tools:listitem="@layout/custom_item_packages" />
+
+</RelativeLayout>
