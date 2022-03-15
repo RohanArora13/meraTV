@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "channel.price.calculator.meratv"
+        applicationId "channel.price.calculator.meratvapp"
         minSdk 21
         targetSdk 31
         versionCode 1

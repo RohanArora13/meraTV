@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context="channel.price.calculator.meratv.MainActivity">
+    tools:context="channel.price.calculator.meratvapp.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
